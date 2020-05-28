@@ -40,6 +40,7 @@ namespace FluentMigrator.Console
 {
     public class MigratorConsole
     {
+        [Obsolete("Use dependency injection to access 'application state'.")]
         public string ApplicationContext;
         public string Connection;
         public string ConnectionStringConfigPath;
@@ -275,7 +276,7 @@ namespace FluentMigrator.Console
                         v => { AllowBreakingChange = v != null; }
                     },
                     {
-                        "default-schema-name",
+                        "default-schema-name=",
                         "Set default schema name for the VersionInfo table and the migrations.",
                         v => { DefaultSchemaName = v; }
                     },
